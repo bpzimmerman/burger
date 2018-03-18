@@ -1,0 +1,2 @@
+INSERT INTO burgers (burger_name)
+VALUES ("The Krusty Burger"), ("The Ghost Burger"), ("The Varsity Burger"), ("The Umami Burger"), ("The Ray's Hell Burger"), ("The Ramen Burger"), ("The MOS Burger"), ("The Jucy Lucy"), ("The Lab-Grown Burger"), ("The Quadruple Bypass Burger"), ("The ShackBurger"), ("The Gardenburger"), ("The 21 Burger"), ("The In-N-Out Burger");

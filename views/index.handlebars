@@ -1,0 +1,47 @@
+<div class = "container">
+  <div class = "jumbotron">
+    <div class = "row">
+      <div class = "col-md-3">
+        <img src="assets/img/burgerImg.jpg" alt="Burger Picture" height="767px" width="767px" id = "burger-pic">
+      </div>
+      <div class = "col-md-9">
+        <h1>Welcome to Eat-A-Burger!</h1>
+        <h3>Famous burgers from around the country</h3>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-6">
+      <div class = "card">
+        <div class = "card-header">
+          <h2>Ready to Eat!</h2>
+        </div>
+        <div class = "card-body">
+          <ul>
+            {{#each burgers}}
+              {{#unless devoured}}
+                {{> burgers/eat-block devour=true}}
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class = "col-md-6">
+      <div class = "card">
+        <div class = "card-header">
+          <h2>Already Eaten!</h2>
+        </div>
+        <div class = "card-body">
+          <ul>
+            {{#each burgers}}
+              {{#if devoured}}
+                {{> burgers/eat-block devour=false}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

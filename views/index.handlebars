@@ -1,4 +1,6 @@
 <div class = "container">
+
+  {{!-- page title --}}
   <div class = "jumbotron">
     <div class = "row">
       <div class = "col-md-3">
@@ -10,7 +12,10 @@
       </div>
     </div>
   </div>
+
   <div class = "row">
+
+    {{!-- Ready to Eat panel --}}
     <div class = "col-md-6">
       <div class = "card">
         <div class = "card-header">
@@ -27,6 +32,8 @@
         </div>
       </div>
     </div>
+
+    {{!-- Already Eaten panel --}}
     <div class = "col-md-6">
       <div class = "card">
         <div class = "card-header">
@@ -43,5 +50,52 @@
         </div>
       </div>
     </div>
+
   </div>
+
+  <br>
+  <div class = "row">
+
+    {{!-- Add a Burger form --}}
+    <div class = "col-md-6">
+      <div class = "card">
+        <div class = "card-header">
+          <h2>Add-a-Burger</h2>
+        </div>
+        <div class = "card-body">
+          <form id = "add">
+            <div class = "form-group">
+              <label for = "add-burger">Enter the Burger Name:</label>
+              <input type = "text" id = "add-burger" name = "name" class = "form-control">
+            </div>
+            <button type = "submit" class = "btn btn-default">Add-a-Burger</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Remove a Burger form --}}
+    <div class = "col-md-6">
+      <div class = "card">
+        <div class = "card-header">
+          <h2>Remove-a-Burger</h2>
+        </div>
+        <div class = "card-body">
+          <form id = "del">
+            <div class = "form-group">
+              <label for = "del-burger">Enter the Burger ID:</label>
+              <select id = "del-burger" name = "name" class = "form-control">
+                {{#each burgers}}
+                  <option value="{{this.id}}">{{this.burger_name}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <button type = "submit" class = "btn btn-default">Remove-a-Burger</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>

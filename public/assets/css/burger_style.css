@@ -27,7 +27,7 @@ h1 {
   color: #73942C;
 }
 
-.change-eaten {
+.btn.btn-default {
   float: right;
   background-color: #CF4C18;
   color: #024E0E;

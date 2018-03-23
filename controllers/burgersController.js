@@ -12,20 +12,32 @@ router.get("/", function(req, res){
     var dispObj = {
       burgers: data
     };
-    // console.log(dispObj);
     res.render("index", dispObj);
   });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res){
   burger.update(
     [
       {devoured: req.body.devoured == "true"},
       {id: req.params.id}
     ],
     function(result){
-      console.log(result.changedRows);
-      if (result.changedRows === 0){
+      if (result.affectedRows === 0){
+        return res.status(404).end();
+      };
+      res.status(200).end();
+    }
+  );
+});
+
+router.post("/api/burgers", function(req, res){
+  burger.add(
+    [
+      {burger_name: req.body.name}
+    ],
+    function(result){
+      if (result.affectedRows === 0){
         return res.status(404).end();
       };
       res.status(200).end();

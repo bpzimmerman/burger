@@ -13,11 +13,17 @@ var orm = {
   },
   updateData: function(update, cb){
     var queryStr = "UPDATE ?? SET ? WHERE ?";
+    connection.query(queryStr, update, function(err, res){
+      if (err) throw err;
+      cb(res);
+    });
+  },
+  addData: function(update, cb){
+    var queryStr = "INSERT INTO ?? SET ?"
     var query = connection.query(queryStr, update, function(err, res){
       if (err) throw err;
       cb(res);
     });
-    console.log(query.sql);
   }
 };
 

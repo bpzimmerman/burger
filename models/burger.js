@@ -10,6 +10,10 @@ var burger = {
   update: function(updateArr, cbArg){
     updateArr.unshift("burgers");
     orm.updateData(updateArr, cbArg);
+  },
+  add: function(updateArr, cbArg){
+    updateArr.unshift("burgers");
+    orm.addData(updateArr, cbArg);
   }
 };
 

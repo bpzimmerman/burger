@@ -15,4 +15,18 @@ $(document).ready(function(){
       }
     );
   });
+  $("#add").on("submit", function(event){
+    event.preventDefault();
+    var newBurger = {
+      name: $("#add-burger").val().trim()
+    };
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function(){
+        location.reload();
+      }
+    );
+  });
 });

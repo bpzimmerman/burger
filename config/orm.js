@@ -10,6 +10,14 @@ var orm = {
       if (err) throw err;
       cb(res);
     });
+  },
+  updateData: function(update, cb){
+    var queryStr = "UPDATE ?? SET ? WHERE ?";
+    var query = connection.query(queryStr, update, function(err, res){
+      if (err) throw err;
+      cb(res);
+    });
+    console.log(query.sql);
   }
 };
 

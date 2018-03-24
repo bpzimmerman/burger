@@ -1,2 +1,2 @@
-INSERT INTO burgers (burger_name)
-VALUES ("The Krusty Burger"), ("The Ghost Burger"), ("The Varsity Burger"), ("The Umami Burger"), ("The Ray's Hell Burger"), ("The Ramen Burger"), ("The MOS Burger"), ("The Jucy Lucy"), ("The Lab-Grown Burger"), ("The Quadruple Bypass Burger"), ("The ShackBurger"), ("The Gardenburger"), ("The 21 Burger"), ("The In-N-Out Burger");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("The Krusty Burger", false), ("The Ghost Burger", true), ("The Varsity Burger", true), ("The Umami Burger", false), ("The Ray's Hell Burger", true), ("The Ramen Burger", false), ("The MOS Burger", false), ("The Jucy Lucy", true), ("The Lab-Grown Burger", false), ("The Quadruple Bypass Burger", false), ("The ShackBurger", false), ("The Gardenburger", false), ("The 21 Burger", true), ("The In-n-Out Burger", false);

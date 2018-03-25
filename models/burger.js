@@ -1,11 +1,12 @@
 // import the ORM
 var orm = require("../config/orm.js");
 
+// burger object that adds the table to the escape array and sets the query string based on the rte argument then calls the databaseQuery function in orm object (located in orm.js)
 var burger = {
   table: "burgers",
-  update: function(rte, updateArr, cbArg){
+  update: function(rte, escapeArr, response, cbFunc){
     var queryStr = "";
-    updateArr.unshift(this.table);
+    escapeArr.unshift(this.table);
     switch (rte){
       case "get":
         queryStr = "SELECT * FROM ??";
@@ -19,7 +20,7 @@ var burger = {
       case "delete":
         queryStr = "DELETE FROM ?? WHERE ?";
     }
-    orm.databaseQuery(queryStr, updateArr, cbArg);
+    orm.databaseQuery(queryStr, escapeArr, response, cbFunc);
   }
 };
 
